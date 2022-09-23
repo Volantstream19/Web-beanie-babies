@@ -12,6 +12,9 @@ export function renderBaby(baby) {
     const p = document.createElement('p');
     p.textContent = baby.astrology;
 
+    const animal = document.createElement('span');
+    animal.textContent = baby.animal;
+
     li.append(h2, img, p);
 
     return li;

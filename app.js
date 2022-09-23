@@ -5,7 +5,7 @@ import { renderAstroSign, renderBaby } from './render.js';
 /* Get DOM Elements */
 const babyList = document.getElementById('baby-list');
 const astrologySelect = document.getElementById('astrology-select');
-
+const searchForm = document.getElementById('search-form');
 /* State */
 
 let astrologys = [];
@@ -26,13 +26,21 @@ window.addEventListener('load', async () => {
 });
 
 async function findBabies(name, astrology) {
-    const response = await getBabies();
+    const response = await getBabies(name, astrology);
     error = response.error;
     babies = response.data;
+    count = response.count;
+
     if (!error) {
         displayBabies();
     }
 }
+
+searchForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const formData = new FormData(searchForm);
+    findBabies(formData.get('name'), formData.get('astroSign'));
+});
 
 /* Display Functions */
 function displayBabies() {
@@ -41,7 +49,6 @@ function displayBabies() {
     for (const baby of babies) {
         const babyEl = renderBaby(baby);
         babyList.append(babyEl);
-        console.log(baby);
     }
 }
 

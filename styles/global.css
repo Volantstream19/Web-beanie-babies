@@ -38,6 +38,8 @@ main {
     display: grid;
     grid-template-rows: auto 1fr;
     gap: 20px;
+    background: rgb(230, 238, 255);
+    background: linear-gradient(153deg, rgba(230, 238, 255, 1) 0%, rgba(165, 165, 238, 1) 100%);
 }
 
 .search {
@@ -70,8 +72,10 @@ button {
 }
 
 .card {
-    background: white;
+    background: rgb(230, 238, 255);
+    background: linear-gradient(153deg, rgba(230, 238, 255, 1) 0%, rgba(227, 185, 168, 1) 75%);
     border: 1px solid lightgrey;
+    border-radius: 25px;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
 
     padding: 10px;
@@ -83,7 +87,9 @@ button {
 }
 
 .card img {
-    width: 72px;
+    width: 110px;
+    border: 1px solid lavender;
+    border-radius: 25px;
 }
 
 .card h2 {
