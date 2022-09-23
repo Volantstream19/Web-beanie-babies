@@ -33,3 +33,65 @@ header .logo {
 main {
     padding: 20px;
 }
+
+main {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 20px;
+    background: rgb(230, 238, 255);
+    background: linear-gradient(153deg, rgba(230, 238, 255, 1) 0%, rgba(165, 165, 238, 1) 100%);
+}
+
+.search {
+    display: flex;
+    justify-content: space-between;
+}
+
+form {
+    display: flex;
+}
+
+input,
+select {
+    height: 40px;
+    width: 175px;
+    padding: 0 5px;
+    font-size: 1.1em;
+}
+
+button {
+    height: 40px;
+    width: 60px;
+}
+
+.list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-auto-rows: 225px;
+    gap: 10px;
+}
+
+.card {
+    background: rgb(230, 238, 255);
+    background: linear-gradient(153deg, rgba(230, 238, 255, 1) 0%, rgba(227, 185, 168, 1) 75%);
+    border: 1px solid lightgrey;
+    border-radius: 25px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+
+    padding: 10px;
+    text-align: center;
+
+    display: grid;
+    align-content: space-between;
+    justify-items: center;
+}
+
+.card img {
+    width: 110px;
+    border: 1px solid lavender;
+    border-radius: 25px;
+}
+
+.card h2 {
+    font-size: 1.1em;
+}
