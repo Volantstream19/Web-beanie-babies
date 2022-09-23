@@ -6,6 +6,7 @@ import { renderAstroSign, renderBaby } from './render.js';
 const babyList = document.getElementById('baby-list');
 const astrologySelect = document.getElementById('astrology-select');
 const searchForm = document.getElementById('search-form');
+const notificationDisplay = document.getElementById('notification-display');
 /* State */
 
 let astrologys = [];
@@ -31,6 +32,7 @@ async function findBabies(name, astrology) {
     babies = response.data;
     count = response.count;
 
+    displayNotifications();
     if (!error) {
         displayBabies();
     }
@@ -58,4 +60,14 @@ function displayAstroSign() {
         astrologySelect.append(option);
     }
 }
+function displayNotifications() {
+    if (error) {
+        notificationDisplay.classList.add('error');
+        notificationDisplay.textContent = error.message;
+    } else {
+        notificationDisplay.classList.remove('error');
+        notificationDisplay.textContent = `Showing ${babies.length} of ${count}`;
+    }
+}
+
 // (don't forget to call any display functions you want to run on page load!)

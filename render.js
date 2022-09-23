@@ -10,10 +10,7 @@ export function renderBaby(baby) {
     h2.textContent = baby.title;
 
     const p = document.createElement('p');
-    p.textContent = baby.astrology;
-
-    const animal = document.createElement('span');
-    animal.textContent = baby.animal;
+    p.textContent = baby.astroSign;
 
     li.append(h2, img, p);
 
